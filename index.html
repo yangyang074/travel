@@ -115,6 +115,10 @@
   .facts .f span{display:block;font-size:12px;color:var(--jade);font-weight:700;letter-spacing:1px;margin-bottom:2px}
   .facts .f b{font-size:14.5px;color:#2a3a34;font-weight:600}
   .facts-note{font-size:12.5px;color:var(--muted);margin:6px 0 0}
+  .figrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:560px;margin:12px 0}
+  .figrow .figure{margin:0;aspect-ratio:4/3}
+  @media(max-width:480px){.figrow{grid-template-columns:1fr}}
+  .pose-head{margin:30px 0 4px;font-size:18px;color:var(--jade);font-weight:800;letter-spacing:.5px}
 
   footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 20px;text-align:center;color:var(--muted);font-size:13px}
   footer a{color:var(--muted);text-decoration:underline}
@@ -195,15 +199,15 @@
 
   <!-- ===== DAY 1 ===== -->
   <section id="day1">
-    <div class="sec-head"><span class="idx">D1</span><h2>第 1 天 · 灵隐寺 + 西湖北线 + 傍晚手划船</h2></div>
-    <p class="sec-sub">景点集中在西湖西 / 北一带，雨中烟雾意境最佳，是全程最出片的一天。</p>
+    <div class="sec-head"><span class="idx">D1</span><h2>第 1 天 · 灵隐环线 + 西湖西线秘境 + 手划船</h2></div>
+    <p class="sec-sub">上午走灵隐环线（拜佛 + 喝茶 + 避人），下午西湖西侧无人秘境 citywalk，傍晚手划船。雨中烟雾意境最佳，是最出片、最治愈的一天。</p>
     <span class="day-tag">DAY 1 <small>11:00 出发 · 体育场路18号</small></span>
 
     <div class="tl">
       <div class="stop">
         <span class="t">11:00</span>
-        <h3>飞来峰 · 灵隐寺</h3>
-        <p>酒店打车约 25 分钟。<b>先买飞来峰景区门票进景区</b>，想进灵隐寺要在里面<b>再单独买「香花券」</b>（两张分开）。雨天古木参天、香烟缭绕，飞来峰石窟造像非常有氛围。游览约 2–2.5 小时。</p>
+        <h3>灵隐环线·上半场 · 飞来峰 + 灵隐寺</h3>
+        <p>酒店打车约 25 分钟。<b>先买飞来峰景区门票进景区</b>，想进灵隐寺要在里面<b>再单独买「香花券」</b>（两张分开）。雨天古木参天、香烟缭绕，飞来峰石窟造像非常有氛围。</p>
         <div class="figure"><img src="img/lingyin.jpg" alt="灵隐寺" /></div>
         <div class="meta"><span class="pill">打车 ¥30 左右</span><span class="pill rain">雨天出片佳</span></div>
         <a class="btn" href="https://www.amap.com/search?query=灵隐寺" target="_blank" rel="noopener">高德导航·灵隐寺</a>
@@ -211,26 +215,48 @@
       </div>
 
       <div class="stop">
-        <span class="t">13:30</span>
-        <h3>午餐 · 灵隐路一带</h3>
-        <p>景区周边素斋或杭帮菜，简单吃。也可稍后回市区吃正餐。</p>
-        <div class="meta"><span class="pill eat">素斋 / 农家菜</span></div>
+        <span class="t">13:00</span>
+        <h3>灵隐环线·下半场 · 永福寺 / 法喜寺（避人喝茶·出片）</h3>
+        <p>灵隐后山一路向上串起多座古寺，客少幽静、最适合慢拍：<br>
+        <b>永福寺</b>——沿石桥溪流而上，林深寺静，寺内有<b>茶室可喝杯茶歇脚</b>，雨雾里禅意拉满；<br>
+        <b>法喜寺（上天竺）</b>——<b>黄墙黛瓦</b>的网红机位，求姻缘很灵，黄墙前拍人像最出片。<br>
+        体力好可坐<b>北高峰索道 / 电车（约 ¥10）</b>上观景台俯瞰全城。</p>
+        <div class="figrow">
+          <div class="figure"><img src="img/yongfu.jpg" alt="永福寺·石桥竹林" /></div>
+          <div class="figure"><img src="img/yongfu2.jpg" alt="永福寺·大殿" /></div>
+        </div>
+        <div class="meta"><span class="pill">环线徒步约 4000 步</span><span class="pill eat">永福寺喝茶</span><span class="pill rain">客少·禅意</span></div>
+        <a class="btn" href="https://www.amap.com/search?query=永福寺" target="_blank" rel="noopener">高德导航·永福寺</a>
+        <a class="btn alt" href="https://www.amap.com/search?query=法喜寺" target="_blank" rel="noopener">法喜寺</a>
       </div>
 
       <div class="stop">
         <span class="t">14:30</span>
-        <h3>西湖北线漫步 · 断桥 → 白堤 → 孤山</h3>
-        <p>打车到北山街·断桥，开始步行：<b>断桥残雪 → 白堤 → 平湖秋月 → 孤山（西泠印社）→ 曲院风荷</b>。白堤一线雨雾里看湖最经典，沿途多树荫廊道，适合慢拍。</p>
-        <div class="figure"><img src="img/broken_bridge.jpg" alt="断桥" /></div>
-        <div class="meta"><span class="pill">步行约 2 小时</span><span class="pill rain">水墨氛围</span></div>
-        <a class="btn" href="https://www.amap.com/search?query=断桥残雪" target="_blank" rel="noopener">高德导航·断桥</a>
+        <h3>午餐 · 灵隐路 / 茶寮</h3>
+        <p>景区周边素斋、杭帮菜或寺旁茶寮简单吃，养足体力下午走西线。</p>
+        <div class="meta"><span class="pill eat">素斋 / 农家菜</span></div>
       </div>
 
       <div class="stop">
-        <span class="t">16:30</span>
+        <span class="t">15:00</span>
+        <h3>⭐ 推荐：西湖西线·无人秘境 citywalk</h3>
+        <p>西湖西侧人最少、最治愈的一段，雨雾里超出片。路线：<br>
+        <b>茅家埠 → 杨公堤 → 郭庄 → 浴鹄湾 / 乌龟潭水杉栈道 → 植物园 / 韩美林艺术馆 → 玉泉观鱼</b>。<br>
+        茅家埠香道与绣球、贴着水面的水杉栈道、临湖的<b>郭庄</b>可喝茶歇脚，<b>韩美林艺术馆免费</b>且室内可躲雨。</p>
+        <div class="figrow">
+          <div class="figure"><img src="img/maojiabu.jpg" alt="茅家埠" /></div>
+          <div class="figure"><img src="img/yanggong.jpg" alt="杨公堤" /></div>
+        </div>
+        <div class="meta"><span class="pill">步行 2–3 小时</span><span class="pill rain">避人秘境·治愈</span><span class="pill eat">郭庄喝茶</span></div>
+        <a class="btn" href="https://www.amap.com/search?query=茅家埠" target="_blank" rel="noopener">高德导航·茅家埠</a>
+        <a class="btn alt" href="https://www.amap.com/search?query=西湖郭庄" target="_blank" rel="noopener">郭庄</a>
+      </div>
+
+      <div class="stop">
+        <span class="t">17:00</span>
         <h3>西湖手划船 · 傍晚出片</h3>
-        <p>平湖秋月 / 楼外楼码头可坐<b>手划船</b>（船夫摇橹，约 ¥150/小时/船），配雷峰塔、苏堤背景拍人像最经典；不想自己晃船也可坐三潭印月大游船登小瀛洲。<b>注意：西湖不允许自划皮划艇</b>，皮划艇留到青山湖。</p>
-        <div class="figure"><img src="img/su_causeway.jpg" alt="苏堤" /></div>
+        <p>茅家埠码头或平湖秋月 / 楼外楼码头可坐<b>手划船</b>（船夫摇橹，约 ¥150/小时/船），配雷峰塔、苏堤背景拍人像最经典；不想自己晃船也可坐三潭印月大游船登小瀛洲。<b>注意：西湖不允许自划皮划艇</b>，皮划艇留到青山湖。</p>
+        <div class="figure"><img src="img/su_causeway.jpg" alt="苏堤手划船" /></div>
         <div class="meta"><span class="pill">手划船 ¥150/时</span><span class="pill">游船 ¥55–70</span><span class="pill rain">船有顶棚·雨天可坐</span></div>
         <a class="btn" href="https://www.amap.com/search?query=西湖平湖秋月码头" target="_blank" rel="noopener">高德导航·码头</a>
       </div>
@@ -243,6 +269,19 @@
         <a class="btn" href="https://www.amap.com/search?query=楼外楼孤山路店" target="_blank" rel="noopener">高德导航·楼外楼</a>
       </div>
     </div>
+
+    <div class="note">🗺 <b>不想走西线？经典北线备选：</b>断桥残雪 → 白堤 → 平湖秋月 → 孤山（西泠印社）→ 曲院风荷，雨雾里看湖最经典，但人比西线多。</div>
+
+    <div class="pose-head">📷 拍照姿势速记（西湖 / 灵隐 / 青山湖通用）</div>
+    <div class="facts">
+      <div class="f"><span>侧身回眸</span><b>身体侧 45°、轻撩发、下巴微抬，氛围感</b></div>
+      <div class="f"><span>漫步抓拍</span><b>自然向前走 + 回头浅笑，松弛随性</b></div>
+      <div class="f"><span>临水伸手</span><b>坐船边/蹲岸边，指尖轻触水面</b></div>
+      <div class="f"><span>禅意定格</span><b>黄墙前持伞侧站 / 双手合十，安静</b></div>
+      <div class="f"><span>划船入镜</span><b>青山湖侧坐望向林间，桨入水</b></div>
+      <div class="f"><span>道具加分</span><b>油纸伞 / 团扇 / 一杯茶，雨天更有戏</b></div>
+    </div>
+    <p class="facts-note">路线与拍照灵感参考小红书实拍笔记（西湖西线秘境、灵隐环线、拍照教程）。</p>
 
     <div class="note">☔ <b>雨太大的室内备选：</b>浙江省博物馆（孤山馆）、中国丝绸博物馆，都在西湖边、全程室内，照样充实。</div>
   </section>
@@ -284,10 +323,11 @@
 
       <div class="stop">
         <span class="t">出片</span>
-        <h3>机位顺序 & 穿搭</h3>
-        <p>① 林间水道穿行（主图）→ ② 树影倒影处定点拍 → ③ 岸边栈道全景。穿<b>亮色纯色</b>衣服（红 / 白 / 姜黄），与绿水池杉对比最跳色。</p>
-        <div class="figure"><img src="img/sup.jpg" alt="桨板划行（示意）" /></div>
-        <div class="meta"><span class="pill">📷 主图：水道穿行</span></div>
+        <h3>拍照模板 · 机位顺序 & 穿搭</h3>
+        <p><b>照着下面这张拍：</b>人坐进小船 / 皮划艇，船停在池杉林前的绿水中，身体侧坐、目视远处林间，桨轻搭水面——前景绿水、背景成排树木，构图层次最足。<br>
+        机位顺序：① 林间水道穿行（主图）→ ② 树影倒影处定点拍 → ③ 岸边栈道全景。穿<b>亮色纯色</b>衣服（红 / 白 / 姜黄），与抹茶绿池杉对比最跳色。</p>
+        <div class="figure"><img src="img/tmpl_silver.jpg" alt="划船入镜·拍照模板示例" /></div>
+        <div class="meta"><span class="pill">📷 拍照模板·划船入镜</span><span class="pill">构图参考</span></div>
       </div>
 
       <div class="stop">
