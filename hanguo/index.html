@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>首尔 + 釜山 7天攻略 · 三个女生的购物美食之旅</title>
+<style>
+  :root{
+    --pink:#ff7ea3; --pink-soft:#ffe3ec; --blue:#5aa9e6; --blue-soft:#e6f2fb;
+    --ink:#2b2b35; --grey:#6b7080; --line:#ece6ef; --card:#ffffff; --bg:#fff8fb;
+    --yellow:#ffd166; --green:#3fbf8f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;}
+  img{max-width:100%;display:block;}
+  a{color:var(--pink);}
+
+  /* HERO */
+  .hero{position:relative;min-height:62vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;}
+  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.55));}
+  .hero .inner{position:relative;z-index:2;padding:32px 22px 30px;max-width:1000px;margin:0 auto;width:100%;}
+  .hero h1{font-size:2.05rem;line-height:1.25;text-shadow:0 2px 14px rgba(0,0,0,.35);}
+  .hero .sub{margin-top:10px;font-size:1rem;opacity:.96;text-shadow:0 1px 8px rgba(0,0,0,.4);}
+  .badges{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+  .badge{background:rgba(255,255,255,.92);color:var(--ink);padding:6px 12px;border-radius:999px;font-size:.82rem;font-weight:600;}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  nav .wrap{max-width:1000px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:10px 12px;}
+  nav a{flex:0 0 auto;text-decoration:none;color:var(--grey);font-size:.85rem;font-weight:600;padding:7px 12px;border-radius:999px;white-space:nowrap;}
+  nav a:hover{background:var(--pink-soft);color:var(--pink);}
+
+  .container{max-width:1000px;margin:0 auto;padding:0 18px;}
+  section{padding:34px 0 8px;}
+  h2.sec{font-size:1.5rem;display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+  h2.sec .dot{width:12px;height:12px;border-radius:50%;background:var(--pink);}
+  .lead{color:var(--grey);margin-bottom:18px;}
+
+  /* OVERVIEW TABLE */
+  .table-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--line);background:#fff;}
+  table{width:100%;border-collapse:collapse;min-width:560px;}
+  th,td{padding:12px 12px;text-align:left;border-bottom:1px solid var(--line);font-size:.92rem;vertical-align:top;}
+  th{background:var(--pink-soft);color:#b03a5b;font-weight:700;}
+  tr:last-child td{border-bottom:none;}
+  .wd{font-weight:700;color:var(--blue);}
+
+  /* DAY CARD */
+  .day{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin:18px 0;box-shadow:0 8px 24px rgba(180,140,160,.08);}
+  .day .cover{position:relative;}
+  .day .cover img{width:100%;height:230px;object-fit:cover;}
+  .day .tag{position:absolute;left:14px;top:14px;background:var(--pink);color:#fff;font-weight:700;padding:6px 14px;border-radius:999px;font-size:.85rem;box-shadow:0 4px 12px rgba(255,126,163,.5);}
+  .day .body{padding:20px 20px 22px;}
+  .day h3{font-size:1.25rem;margin-bottom:4px;}
+  .day .theme{color:var(--pink);font-weight:600;font-size:.92rem;margin-bottom:14px;}
+
+  .step{display:flex;gap:12px;padding:11px 0;border-top:1px dashed var(--line);}
+  .step:first-of-type{border-top:none;}
+  .time{flex:0 0 64px;font-weight:700;color:var(--blue);font-size:.86rem;padding-top:2px;}
+  .step .what{flex:1;}
+  .step .what b{font-size:1rem;}
+  .step .what p{color:var(--grey);font-size:.9rem;margin-top:2px;}
+
+  /* INFO BOXES */
+  .box{border-radius:14px;padding:13px 15px;margin:12px 0;font-size:.9rem;}
+  .box .h{font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:7px;}
+  .transit{background:var(--blue-soft);border:1px solid #cfe7f8;}
+  .transit .h{color:#2f7fc0;}
+  .eat{background:#fff5e6;border:1px solid #ffe2b3;}
+  .eat .h{color:#c8841a;}
+  .tip{background:#eafaf3;border:1px solid #c4eeda;}
+  .tip .h{color:#1f9d6e;}
+  .warn{background:#ffeef0;border:1px solid #ffccd3;}
+  .warn .h{color:#d6455d;}
+  .box ul{margin:4px 0 0 2px;list-style:none;}
+  .box li{padding:3px 0 3px 18px;position:relative;}
+  .box li::before{content:"›";position:absolute;left:2px;color:inherit;opacity:.6;font-weight:700;}
+  .box li b{color:var(--ink);}
+
+  .pill{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:8px;padding:1px 7px;font-size:.78rem;color:var(--grey);font-weight:600;margin:0 2px;}
+
+  /* GENERIC CARDS GRID */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .mini{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 15px;}
+  .mini h4{font-size:1rem;margin-bottom:4px;}
+  .mini p{font-size:.86rem;color:var(--grey);}
+  .mini .price{color:var(--green);font-weight:700;font-size:.86rem;margin-top:6px;}
+
+  .foodcard{display:flex;gap:13px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin:10px 0;}
+  .foodcard .star{flex:0 0 auto;font-size:.78rem;color:#c8841a;font-weight:700;}
+  .foodcard .info{flex:1;}
+  .foodcard h4{font-size:1rem;}
+  .foodcard p{font-size:.85rem;color:var(--grey);margin-top:2px;}
+
+  .checklist{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;}
+  .checklist label{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:.93rem;cursor:pointer;}
+  .checklist input{margin-top:4px;width:17px;height:17px;accent-color:var(--pink);}
+
+  footer{text-align:center;color:var(--grey);font-size:.84rem;padding:34px 18px 50px;}
+  .heart{color:var(--pink);}
+  @media(max-width:640px){
+    .hero h1{font-size:1.55rem;}
+    .grid{grid-template-columns:1fr;}
+    .day .cover img{height:185px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="bg" src="images/hero.png" alt="首尔釜山旅行">
+  <div class="veil"></div>
+  <div class="inner">
+    <h1>首尔 + 釜山 · 7天6晚<br>三个女生的购物美食之旅</h1>
+    <div class="sub">6/30（二）– 7/6（一） · 住宿东大门 · 购物 / 韩服 / 釜山特种兵</div>
+    <div class="badges">
+      <span class="badge">🛍️ 弘大·圣水·明洞·汉南·狎鸥亭</span>
+      <span class="badge">👘 景福宫韩服</span>
+      <span class="badge">🚝 釜山天空胶囊+松岛缆车</span>
+      <span class="badge">🍽️ 实测好评美食</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#before">行前必看</a>
+    <a href="#overview">行程总览</a>
+    <a href="#d1">Day1 抵达</a>
+    <a href="#d2">Day2 韩服</a>
+    <a href="#d3">Day3 弘大圣水</a>
+    <a href="#d4">Day4 釜山</a>
+    <a href="#d5">Day5 狎鸥亭汉南</a>
+    <a href="#d6">Day6 益善洞</a>
+    <a href="#d7">Day7 返程</a>
+    <a href="#food">美食榜</a>
+    <a href="#book">预订清单</a>
+  </div>
+</nav>
+
+<!-- BEFORE YOU GO -->
+<section id="before" class="container">
+  <h2 class="sec"><span class="dot"></span>行前必看（先看这个）</h2>
+  <p class="lead">几个关键点已帮你算好/查好，避免踩坑。</p>
+
+  <div class="box warn">
+    <div class="h">⚠️ 闭馆提醒（已帮你避开）</div>
+    <ul>
+      <li><b>景福宫每周二闭馆</b>。你们的完整游玩日没有周二，无冲突；韩服日放在 7/1（周三）。</li>
+      <li><b>德寿宫 / 昌德宫等其他宫殿每周一闭馆</b>。7/6（周一）是返程日，本来也不安排宫殿。</li>
+    </ul>
+  </div>
+
+  <div class="box tip">
+    <div class="h">🌦️ 天气 & 打包</div>
+    <ul>
+      <li>7月初是韩国<b>梅雨季 + 高温高湿</b>，约 24–30℃，常有阵雨。</li>
+      <li>必带：<b>折叠伞、防晒、透气衣物、好走的鞋</b>；室内冷气强，备薄外套。</li>
+    </ul>
+  </div>
+
+  <div class="box transit">
+    <div class="h">📱 必装 App & 必办</div>
+    <ul>
+      <li>地图导航：<b>Naver Map / KakaoMap</b>（Google 地图在韩国导航不准）。</li>
+      <li>翻译 <b>Papago</b> · 地铁 <b>Subway Korea</b> · 打车 <b>Kakao T</b>。</li>
+      <li>到机场先办：<b>T-money 交通卡</b>（地铁公交便利店通用）+ <b>eSIM / 上网卡</b>（Klook、KKday 更便宜）。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview" class="container">
+  <h2 class="sec"><span class="dot"></span>行程总览</h2>
+  <p class="lead">日期已对应星期，一眼看清每天主线。</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>日期</th><th>星期</th><th>主要安排</th><th>住</th></tr></thead>
+      <tbody>
+        <tr><td>6/30</td><td class="wd">周二</td><td>20:00 落地仁川 → 入住东大门 · 夜逛 DDP</td><td>首尔·东大门</td></tr>
+        <tr><td>7/1</td><td class="wd">周三</td><td>景福宫韩服 + 北村 + 三清洞 + 明洞美妆</td><td>首尔·东大门</td></tr>
+        <tr><td>7/2</td><td class="wd">周四</td><td>弘大 + 延南洞 + 圣水洞（Matin Kim 旗舰）+ 东大门</td><td>首尔·东大门</td></tr>
+        <tr><td>7/3</td><td class="wd">周五</td><td>🚄 釜山一日特种兵：海云台天空胶囊 + 松岛缆车 + 南浦洞</td><td>首尔·东大门</td></tr>
+        <tr><td>7/4</td><td class="wd">周六</td><td>狎鸥亭（Stüssy）+ 新沙洞林荫道 + 汉南洞买手店咖啡</td><td>首尔·东大门</td></tr>
+        <tr><td>7/5</td><td class="wd">周日</td><td>益善洞 + 仁寺洞 + 广藏市场 + 自由补货 · 收行李</td><td>首尔·东大门</td></tr>
+        <tr><td>7/6</td><td class="wd">周一</td><td>上午 8:00 出发去机场 → 12:35 航班返程</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- DAY 1 -->
+<section id="d1" class="container">
+  <h2 class="sec"><span class="dot"></span>Day 1 · 6/30（周二）抵达首尔</h2>
+  <div class="day">
+    <div class="cover"><img src="images/hero.png" alt="抵达首尔"><span class="tag">Day 1 · 抵达</span></div>
+    <div class="body">
+      <h3>仁川落地 → 入住东大门</h3>
+      <div class="theme">轻松第一晚 · 不夜城东大门</div>
+      <div class="step"><div class="time">20:00</div><div class="what"><b>仁川机场（ICN）落地</b><p>过关 + 取行李大约到 21:00 出关。</p></div></div>
+      <div class="step"><div class="time">21:00</div><div class="what"><b>前往东大门酒店</b><p>3 人带行李，按舒适度排序见下方交通框。</p></div></div>
+      <div class="step"><div class="time">22:30</div><div class="what"><b>Check-in + 放行李</b><p>状态好可去 DDP（东大门设计广场）拍夜景 + LED 玫瑰花海，附近商场逛到凌晨。</p></div></div>
+
+      <div class="box transit">
+        <div class="h">🚍 机场 → 东大门（推荐顺序）</div>
+        <ul>
+          <li><b>① 机场巴士 6701 路（豪华大巴）</b>：直达东大门/明洞，有行李舱、有座位最舒服。1 楼到达厅外 4–6 号站台自助机买票，约 ₩17,000，70–90 分钟。</li>
+          <li><b>② 出租车 / Kakao T</b>：3 人+行李最省事，夜间到东大门约 ₩70,000–90,000（含过路费），均摊划算，60–70 分钟。</li>
+          <li><b>③ AREX 机场快线</b>：到首尔站换地铁 1/4 号线到东大门，最便宜但要拖箱换乘，末班约 23:40，带大行李不太推荐。</li>
+        </ul>
+      </div>
+      <div class="box eat">
+        <div class="h">🍽️ 宵夜</div>
+        <ul><li>东大门 <b>陈玉华奶奶一只鸡</b>（24h 名店）或便利店宵夜，简单休息。</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 2 -->
+<section id="d2" class="container">
+  <h2 class="sec"><span class="dot"></span>Day 2 · 7/1（周三）景福宫韩服</h2>
+  <div class="day">
+    <div class="cover"><img src="images/day1.png" alt="景福宫韩服"><span class="tag">Day 2 · 韩服</span></div>
+    <div class="body">
+      <h3>景福宫韩服 + 北村三清洞 + 明洞美妆</h3>
+      <div class="theme">穿韩服拍美照 + K-beauty 大采购</div>
+      <div class="step"><div class="time">09:00</div><div class="what"><b>景福宫站租韩服</b><p>3 号线景福宫站 4 号出口附近多家韩服店（Hanboknam、Oneday Hanbok 等），约 ₩15,000–32,000，<b>穿韩服进宫免门票</b>。早上 9–12 点最忙，早点去。</p></div></div>
+      <div class="step"><div class="time">10:00</div><div class="what"><b>逛景福宫拍照</b><p>🎺 守门将换岗仪式 <b>10:00 / 14:00</b>（周二不办），别错过。</p></div></div>
+      <div class="step"><div class="time">12:30</div><div class="what"><b>午餐（光化门一带）</b><p>土俗村参鸡汤等名店，详见美食榜。</p></div></div>
+      <div class="step"><div class="time">13:30</div><div class="what"><b>北村韩屋村 → 三清洞</b><p>韩屋 + 韩服绝配；三清洞文艺小店、咖啡馆。</p></div></div>
+      <div class="step"><div class="time">17:00</div><div class="what"><b>还韩服</b><p>注意还衣时间（多数 19:00 前）。</p></div></div>
+      <div class="step"><div class="time">17:30</div><div class="what"><b>明洞 K-beauty + 小吃街</b><p>Olive Young 旗舰、各大护肤彩妆品牌；晚上小吃街超热闹。</p></div></div>
+
+      <div class="box transit">
+        <div class="h">🚇 坐车路线（从东大门出发）</div>
+        <ul>
+          <li><b>去景福宫</b>：东大门站乘 <span class="pill">1号线</span> 到钟路3街，换 <span class="pill">3号线</span> 到「景福宫站」4 号出口，约 15 分钟。</li>
+          <li><b>北村/三清洞</b>：景福宫步行 10–15 分钟可达，或地铁 3 号线安国站。</li>
+          <li><b>去明洞</b>：东大门历史文化公园站乘 <span class="pill">4号线</span> 到「明洞站」，约 2 站；或从安国站坐 3 号线到忠武路换 4 号线。</li>
+        </ul>
+      </div>
+      <div class="box warn"><div class="h">⚠️ 小提醒</div><ul><li>北村是<b>居民区</b>，请轻声、勿闯民宅。Olive Young 满额可退税，记得带护照。</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 3 -->
+<section id="d3" class="container">
+  <h2 class="sec"><span class="dot"></span>Day 3 · 7/2（周四）弘大 + 圣水洞</h2>
+  <div class="day">
+    <div class="cover"><img src="images/day2.png" alt="弘大圣水购物"><span class="tag">Day 3 · 潮流</span></div>
+    <div class="body">
+      <h3>弘大 + 延南洞 + 圣水洞 + 东大门夜逛</h3>
+      <div class="theme">街头潮流 + 首尔「布鲁克林」网红洞</div>
+      <div class="step"><div class="time">10:30</div><div class="what"><b>弘大商圈</b><p>年轻潮流、独立设计、vintage 古着、平价女装、街头品牌（Ader Error、Covernat）；步行街傍晚常有街头表演。</p></div></div>
+      <div class="step"><div class="time">12:00</div><div class="what"><b>延南洞</b><p>「京义线林荫道」散步 + 小众咖啡馆。午餐在此。</p></div></div>
+      <div class="step"><div class="time">14:30</div><div class="what"><b>圣水洞（성수동）</b><p>旧厂房改造红砖文创区，<b>每周不同品牌快闪 pop-up</b>、人气面包咖啡店、概念店。<b>Matin Kim 圣水旗舰店</b>（연무장3길 9，每天 11:00–20:00）就在这。</p></div></div>
+      <div class="step"><div class="time">18:30</div><div class="what"><b>回东大门夜逛</b><p>就在酒店旁：Doota Mall、Hello apM、Migliore 半夜也开；DDP 夜景。</p></div></div>
+
+      <div class="box transit">
+        <div class="h">🚇 坐车路线（从东大门出发，全程 2 号线超方便）</div>
+        <ul>
+          <li><b>去弘大</b>：东大门历史文化公园站乘 <span class="pill">2号线</span> 直达「弘大入口站」9 号出口，约 25 分钟。</li>
+          <li><b>弘大 → 圣水</b>：弘大入口站乘 <span class="pill">2号线</span>（外环）直达「圣水站」，约 30 分钟。</li>
+          <li><b>圣水 → 东大门</b>：圣水站乘 <span class="pill">2号线</span> 直达东大门历史文化公园站，约 10 分钟。</li>
+        </ul>
+      </div>
+      <div class="box tip"><div class="h">💡 购物提示</div><ul><li>圣水 pop-up 每周换，出发前在 Instagram 搜 <b>성수동 팝업</b> 看当周有什么。潮牌价格适中，不必一次买太多——流行变化快。</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 4 BUSAN -->
+<section id="d4" class="container">
+  <h2 class="sec"><span class="dot"></span>Day 4 · 7/3（周五）釜山一日特种兵</h2>
+  <div class="day">
+    <div class="cover"><img src="images/busan.png" alt="釜山天空胶囊缆车"><span class="tag">Day 4 · 釜山</span></div>
+    <div class="body">
+      <h3>海云台天空胶囊 + 松岛海上缆车 + 南浦洞</h3>
+      <div class="theme">早出晚回 · 一天打卡两大网红交通 🚝🚠</div>
+      <div class="step"><div class="time">06:00</div><div class="what"><b>首尔站乘 KTX 去釜山</b><p>车程约 2.5 小时（普通席 ₩59,800）。坐约 6:00 的车，约 8:30 到釜山站。<b>务必提前订往返票</b>。</p></div></div>
+      <div class="step"><div class="time">09:30</div><div class="what"><b>海云台蓝线公园 · 天空胶囊</b><p>尾浦（Mipo）↔ 青沙浦（Cheongsapo）私人小舱，<b>3 人一舱 ₩45,000/舱（≈₩15,000/人）</b>，全程约 30 分钟海景。可再坐海岸列车（₩8,000 单程）逛青沙浦灯塔等站。</p></div></div>
+      <div class="step"><div class="time">11:30</div><div class="what"><b>海云台午餐 + 海滩</b><p>猪肉汤饭名店（见美食榜）+ 海云台沙滩 / 冬柏岛 The Bay 101。</p></div></div>
+      <div class="step"><div class="time">14:00</div><div class="what"><b>松岛海上缆车（Busan Air Cruise）</b><p>1.62km 跨海缆车，松林公园 ↔ 岩南公园天空公园。往返：<b>普通舱 ₩17,000 / 水晶舱（玻璃底）₩22,000</b>。旺季 7–8 月 09:00–22:00。可玩松岛天空步道。</p></div></div>
+      <div class="step"><div class="time">16:30</div><div class="what"><b>南浦洞 / 札嘎其 / BIFF 广场</b><p>光复路购物街、札嘎其海鲜市场、BIFF 糖饼。时间够可顺甘川文化村（约 18:00 关）。</p></div></div>
+      <div class="step"><div class="time">19:30</div><div class="what"><b>晚餐后乘 KTX 返回首尔</b><p>约 19:30–20:30 的车，回首尔站约 22:00–23:00，地铁回东大门。</p></div></div>
+
+      <div class="box transit">
+        <div class="h">🚇 釜山当天交通（特种兵建议善用出租车省时）</div>
+        <ul>
+          <li><b>釜山站 → 海云台尾浦（天空胶囊）</b>：地铁 1 号线到西面换 2 号线到「海云台站」再走/打车到尾浦；赶时间可直接打车 ₩20,000–25,000（约 35 分钟）。</li>
+          <li><b>海云台 → 松岛缆车</b>：跨城较远，建议打车（约 40–50 分钟）；或地铁 2 号线→1 号线札嘎其站，2 号出口转公交 6/26/30/71/96 到岩南洞，步行 10 分钟。</li>
+          <li><b>松岛/南浦 → 釜山站</b>：地铁 1 号线，南浦站↔釜山站仅几站，很近。</li>
+        </ul>
+      </div>
+      <div class="box warn"><div class="h">⚠️ 特种兵关键</div><ul><li><b>天空胶囊超热门，务必提前网上订最早时段</b>（Klook/官网），按预约时间提前 10 分钟到站台。KTX 往返票也提前订。</li></ul></div>
+      <div class="box tip"><div class="h">💡 行李</div><ul><li>当天往返，<b>东大门酒店保留</b>，只带随身小包+相机，轻装上阵。</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 5 -->
+<section id="d5" class="container">
+  <h2 class="sec"><span class="dot"></span>Day 5 · 7/4（周六）狎鸥亭 + 汉南洞</h2>
+  <div class="day">
+    <div class="cover"><img src="images/apgujeong.png" alt="狎鸥亭新沙洞购物"><span class="tag">Day 5 · 买手潮流</span></div>
+    <div class="body">
+      <h3>狎鸥亭（Stüssy）+ 新沙洞林荫道 + 汉南洞</h3>
+      <div class="theme">潮流买手 + 网红咖啡（不医美 / 不奢侈品）</div>
+      <div class="step"><div class="time">11:00</div><div class="what"><b>狎鸥亭 · Stüssy 首尔</b><p>地址 78 Apgujeong-ro 46-gil，江南区，每天 11:00–20:00。热门常排队，开门前到更稳；可顺逛附近 <b>Matin Kim Dosan 店</b>（언주로164길 14）。</p></div></div>
+      <div class="step"><div class="time">13:00</div><div class="what"><b>新沙洞林荫道（가로수길）</b><p>设计师店 + 潮流小店 + 高级咖啡，午餐在此。</p></div></div>
+      <div class="step"><div class="time">15:30</div><div class="what"><b>汉南洞（한남동）</b><p>雅致咖啡馆 + 精品买手店（如 MSMR）；文艺小资氛围超好拍。</p></div></div>
+      <div class="step"><div class="time">19:00</div><div class="what"><b>晚餐 + 回东大门</b><p>汉南/梨泰院一带美食选择多。</p></div></div>
+
+      <div class="box transit">
+        <div class="h">🚇 坐车路线（从东大门出发）</div>
+        <ul>
+          <li><b>去狎鸥亭</b>：东大门历史文化公园站乘 <span class="pill">2号线</span> 到往十里，换 <span class="pill">水仁盆唐线</span> 到「狎鸥亭罗德奥站」；或直接打车约 25–30 分钟（₩12,000 左右）。</li>
+          <li><b>狎鸥亭 → 新沙洞</b>：步行/打车几分钟，或地铁到「新沙站」(3 号线)。</li>
+          <li><b>新沙/狎鸥亭 → 汉南洞</b>：打车过汉江约 10–15 分钟最方便。</li>
+          <li><b>汉南洞 → 东大门</b>：汉江镇站乘 <span class="pill">6号线</span> 到青丘换 5 号线，或直接打车约 20 分钟。</li>
+        </ul>
+      </div>
+      <div class="box tip"><div class="h">💡 偏好已对应</div><ul><li>这天纯潮流买手 + 咖啡路线，<b>不安排医美、不进奢侈品店</b>，按你们要求来。</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 6 -->
+<section id="d6" class="container">
+  <h2 class="sec"><span class="dot"></span>Day 6 · 7/5（周日）益善洞 + 补货</h2>
+  <div class="day">
+    <div class="cover"><img src="images/ikseon.png" alt="益善洞韩屋咖啡"><span class="tag">Day 6 · 文艺补货</span></div>
+    <div class="body">
+      <h3>益善洞 + 仁寺洞 + 广藏市场 + 自由补货</h3>
+      <div class="theme">传统韩屋咖啡 + 扫货 + 退税整理</div>
+      <div class="step"><div class="time">10:30</div><div class="what"><b>益善洞韩屋村（익선동）</b><p>老韩屋改造的文艺咖啡馆、小店，拍照氛围一流。</p></div></div>
+      <div class="step"><div class="time">12:30</div><div class="what"><b>仁寺洞 + 广藏市场</b><p>仁寺洞买伴手礼/工艺品（Ssamziegil）；广藏市场吃绿豆煎饼、麻药紫菜包饭、生牛肉。</p></div></div>
+      <div class="step"><div class="time">15:00</div><div class="what"><b>自由补货（二选一/混搭）</b><p>美妆回明洞 Olive Young；潮流回弘大/圣水；或东大门一站式（就在酒店旁，方便拎回房）。</p></div></div>
+      <div class="step"><div class="time">19:00</div><div class="what"><b>集中退税 + 收拾行李</b><p>保留小票和护照；分好托运/手提，液体注意手提限制。晚餐东大门一只鸡/烤肉收尾。</p></div></div>
+
+      <div class="box transit">
+        <div class="h">🚇 坐车路线（都很近）</div>
+        <ul>
+          <li><b>去益善洞/仁寺洞</b>：东大门站乘 <span class="pill">1号线</span> 到「钟路3街站」（约 2 站），4/6 号出口即益善洞，步行到仁寺洞。</li>
+          <li><b>广藏市场</b>：钟路5街站 <span class="pill">1号线</span> 或从东大门步行约 15 分钟。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 7 -->
+<section id="d7" class="container">
+  <h2 class="sec"><span class="dot"></span>Day 7 · 7/6（周一）返程</h2>
+  <div class="day">
+    <div class="body" style="padding-top:20px;">
+      <h3>上午赶机场 · 航班 12:35</h3>
+      <div class="theme">国际航班建议起飞前 2.5 小时到机场 → 10:00 前到 ICN</div>
+      <div class="step"><div class="time">08:00</div><div class="what"><b>出发去机场</b><p>留足时间应对周一早高峰 + 值机 + 安检。</p></div></div>
+      <div class="step"><div class="time">10:00</div><div class="what"><b>到机场办理</b><p>值机 → 托运 → 退税（机场柜台/自助机，预留时间）→ 安检 → 登机。</p></div></div>
+
+      <div class="box transit">
+        <div class="h">🚇 东大门 → 仁川机场（推荐顺序）</div>
+        <ul>
+          <li><b>① AREX 机场快线（最稳）</b>：东大门站乘 <span class="pill">1号线</span> 到首尔站换 AREX，<b>不堵车、时间最可控</b>，约 60–70 分钟。</li>
+          <li><b>② 机场巴士 6701</b>：东大门直接上车、带行李舒服，但周一早高峰可能堵车，需更早出发。</li>
+        </ul>
+      </div>
+      <div class="box warn"><div class="h">⚠️ 提醒</div><ul><li>7/6 是周一，宫殿类景点闭馆，别安排；早上专心赶机场。</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOD -->
+<section id="food" class="container">
+  <h2 class="sec"><span class="dot"></span>实测好评美食榜</h2>
+  <p class="lead">以下都是常年高人气、口碑稳定的店；热门店建议提前订位或错峰。</p>
+  <img src="images/food.png" alt="韩国美食" style="border-radius:18px;margin-bottom:16px;border:1px solid var(--line);">
+
+  <h3 style="margin:6px 0 8px;font-size:1.1rem;">🍗 首尔</h3>
+  <div class="foodcard"><div class="star">★ 人气</div><div class="info"><h4>土俗村参鸡汤（토속촌삼계탕）· 景福宫</h4><p>首尔最有名参鸡汤之一，常排队。配韩服日午餐绝配。</p></div></div>
+  <div class="foodcard"><div class="star">★ 米其林必比登</div><div class="info"><h4>明洞饺子（명동교자）· 明洞</h4><p>招牌刀削面 + 馄饨，连续多年米其林必比登推荐，翻台快。</p></div></div>
+  <div class="foodcard"><div class="star">★ 高CP值</div><div class="info"><h4>荒谬的生肉（엉터리생고기）· 明洞/弘大</h4><p>烤五花肉 + 大酱汤吃到饱，约 ₩17,900/人，30 年连锁老店，人气高。</p></div></div>
+  <div class="foodcard"><div class="star">★ 名店</div><div class="info"><h4>陈玉华奶奶一只鸡（진옥화할매원조닭한마리）· 东大门</h4><p>东大门一只鸡代表，汤鲜，就在你们住宿区，宵夜/晚餐都合适。</p></div></div>
+  <div class="foodcard"><div class="star">★ 市场美食</div><div class="info"><h4>广藏市场（광장시장）· 钟路</h4><p>绿豆煎饼、麻药紫菜包饭、生牛肉、辣炒年糕，体验在地烟火气。</p></div></div>
+  <div class="foodcard"><div class="star">★ 网红咖啡</div><div class="info"><h4>Onion 어니언（圣水/安国）· London Bagel Museum（安国/汉南）</h4><p>圣水 Onion 面包咖啡店超人气；伦敦贝果博物馆排队名店，早点去。</p></div></div>
+  <div class="foodcard"><div class="star">★ 酱蟹</div><div class="info"><h4>咸草酱蟹（함초간장게장）· 明洞</h4><p>酱油蟹「拌饭神器」，明洞人气酱蟹店。</p></div></div>
+
+  <h3 style="margin:18px 0 8px;font-size:1.1rem;">🌊 釜山</h3>
+  <div class="foodcard"><div class="star">★ 必吃</div><div class="info"><h4>密阳血肠猪肉汤饭（밀양순대돼지국밥）· 海云台</h4><p>海云台 24h 名店，就在海云台站旁，猪骨汤清爽暖胃，约 ₩10,000。</p></div></div>
+  <div class="foodcard"><div class="star">★ 人气独角兽</div><div class="info"><h4>严湧帛猪肉汤饭（엄용백돼지국밥）· 海云台</h4><p>提供釜山式 + 密阳式双汤底，招牌猪颈肉冷面套餐，离海云台站 5 分钟。</p></div></div>
+  <div class="foodcard"><div class="star">★ 市场小吃</div><div class="info"><h4>札嘎其市场 + BIFF 广场 · 南浦洞</h4><p>新鲜生鱼片、海鲜，BIFF 广场籽糖饼（씨앗호떡）是釜山名物。</p></div></div>
+</section>
+
+<!-- BOOKING -->
+<section id="book" class="container">
+  <h2 class="sec"><span class="dot"></span>预订 & 价格清单</h2>
+  <p class="lead">旺季周末票紧张，打勾的项目<b>出发前先订好</b>。价格为参考（每人/韩元）。</p>
+
+  <div class="grid" style="margin-bottom:16px;">
+    <div class="mini"><h4>🚄 KTX 首尔↔釜山</h4><p>首尔站↔釜山站，约 2.5h。Korail 官网 / Klook。</p><div class="price">单程 ₩59,800（普通席）</div></div>
+    <div class="mini"><h4>🚝 海云台天空胶囊</h4><p>3 人一舱，超热门务必提前订最早时段。</p><div class="price">₩45,000/舱（≈₩15,000/人）</div></div>
+    <div class="mini"><h4>🚠 松岛海上缆车</h4><p>往返；Klook 比现场便宜。</p><div class="price">普通舱 ₩17,000 / 水晶舱 ₩22,000</div></div>
+    <div class="mini"><h4>👘 景福宫韩服</h4><p>穿韩服进宫免门票，现场或网上订。</p><div class="price">₩15,000–32,000</div></div>
+  </div>
+
+  <div class="checklist">
+    <label><input type="checkbox">KTX 首尔↔釜山<b>往返车票</b>（7/3，旺季周末早订）</label>
+    <label><input type="checkbox">海云台<b>天空胶囊</b>（3 人舱）网上预约最早时段</label>
+    <label><input type="checkbox"><b>松岛缆车</b>票（Klook）</label>
+    <label><input type="checkbox">景福宫<b>韩服店</b>预约（7/1 周三）</label>
+    <label><input type="checkbox"><b>eSIM / 上网卡</b> + 机场取/激活</label>
+    <label><input type="checkbox">装好 Naver Map / KakaoMap / Papago / Kakao T</label>
+    <label><input type="checkbox">折叠伞 + 防晒 + 好走的鞋（雨季高温）</label>
+    <label><input type="checkbox">护照、信用卡、少量现金、转换插头（220V 欧标双圆脚 C/F）</label>
+    <label><input type="checkbox">热门餐厅提前订位（土俗村、酱蟹等）</label>
+  </div>
+</section>
+
+<footer>
+  为三个女生的韩国之旅用心整理 <span class="heart">♥</span><br>
+  祝玩得开心，拍美美的韩服照、买到心仪的 Stüssy &amp; Matin Kim！<br>
+  <small>价格与营业信息为整理时参考，出行前请以官方/预订平台为准。</small>
+</footer>
+
+</body>
+</html>
