@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>杭州 · 西湖 × 青山湖｜雨天出片三日游</title>
+<style>
+  :root{
+    --ink:#1f2a30;
+    --jade:#1f6f5c;
+    --jade-soft:#2e8b74;
+    --gold:#b8893b;
+    --paper:#f6f3ec;
+    --paper-2:#efeadf;
+    --card:#ffffff;
+    --line:#e4ddcd;
+    --muted:#6b7672;
+    --shadow:0 10px 30px rgba(31,42,48,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;color:var(--ink);background:var(--paper);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+    line-height:1.75;font-size:16px;
+  }
+  a{color:var(--jade);text-decoration:none}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+
+  /* ===== top nav ===== */
+  nav{
+    position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);
+    background:rgba(246,243,236,.86);border-bottom:1px solid var(--line);
+  }
+  nav .wrap{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  nav .brand{font-weight:800;color:var(--jade);margin-right:auto;letter-spacing:.5px}
+  nav a{padding:6px 10px;border-radius:999px;color:var(--ink);font-size:14px}
+  nav a:hover{background:var(--paper-2);color:var(--jade)}
+
+  /* ===== hero ===== */
+  header.hero{position:relative;height:78vh;min-height:460px;overflow:hidden;display:flex;align-items:flex-end}
+  header.hero img{position:absolute;inset:0;filter:saturate(1.05)}
+  header.hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,25,30,.15) 0%,rgba(15,25,30,.10) 40%,rgba(15,25,30,.78) 100%)}
+  header.hero .h-inner{position:relative;max-width:1080px;margin:0 auto;width:100%;padding:0 24px 44px;color:#fff}
+  header.hero h1{font-size:clamp(30px,6vw,56px);margin:0 0 10px;letter-spacing:2px;text-shadow:0 2px 18px rgba(0,0,0,.4)}
+  header.hero p.sub{font-size:clamp(15px,2.4vw,20px);margin:0 0 18px;opacity:.95;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+  .chips{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);padding:6px 14px;border-radius:999px;font-size:13.5px;backdrop-filter:blur(4px)}
+
+  /* ===== layout ===== */
+  main{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+  section{padding:54px 0 8px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .idx{color:var(--gold);font-weight:800;font-size:15px;letter-spacing:2px}
+  h2{font-size:clamp(22px,4vw,30px);margin:0;letter-spacing:1px}
+  .sec-sub{color:var(--muted);margin:6px 0 26px;font-size:15px}
+
+  /* info cards */
+  .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .info{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
+  .info h4{margin:0 0 6px;font-size:16px;color:var(--jade)}
+  .info p{margin:0;font-size:14.5px;color:#3a4a44}
+
+  /* timeline */
+  .day{margin-bottom:18px}
+  .day-tag{display:inline-flex;align-items:center;gap:10px;background:var(--jade);color:#fff;padding:8px 18px;border-radius:999px;font-weight:700;letter-spacing:1px;box-shadow:var(--shadow)}
+  .day-tag small{font-weight:500;opacity:.85}
+  .tl{margin:22px 0 8px;border-left:2px solid var(--line);padding-left:0}
+  .stop{position:relative;padding:0 0 26px 26px;margin-left:8px}
+  .stop::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px var(--paper)}
+  .stop .t{display:inline-block;font-weight:800;color:var(--gold);font-size:14px;letter-spacing:1px;margin-bottom:2px}
+  .stop h3{margin:2px 0 8px;font-size:19px}
+  .stop p{margin:0 0 10px;color:#3a4a44;font-size:15px}
+  .stop .figure{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);margin:12px 0;aspect-ratio:16/9;max-width:560px}
+  .meta{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px}
+  .pill{font-size:12.5px;padding:4px 10px;border-radius:999px;background:var(--paper-2);border:1px solid var(--line);color:#4a564f}
+  .pill.rain{background:#eaf3ff;border-color:#cfe2ff;color:#2c5a9e}
+  .pill.eat{background:#fff1e6;border-color:#ffd9bd;color:#a85a1e}
+  .btn{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;padding:6px 14px;border-radius:999px;background:var(--jade);color:#fff;font-weight:600;margin:2px 8px 2px 0}
+  .btn:hover{background:var(--jade-soft)}
+  .btn.alt{background:#fff;color:var(--jade);border:1px solid var(--jade)}
+
+  /* gallery cards */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+  .pc{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .pc .ph{aspect-ratio:4/3;overflow:hidden}
+  .pc .ph img{transition:transform .5s ease}
+  .pc:hover .ph img{transform:scale(1.06)}
+  .pc .bd{padding:14px 16px 16px}
+  .pc h4{margin:0 0 6px;font-size:17px}
+  .pc .tagline{color:var(--gold);font-size:12.5px;font-weight:700;letter-spacing:1px;margin-bottom:6px}
+  .pc p{margin:0;font-size:14px;color:#46524c}
+  .stars{color:var(--gold);font-size:13px;letter-spacing:1px}
+
+  /* food list */
+  .food{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+  .fc{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:var(--shadow)}
+  .fc .fimg{width:96px;height:96px;flex:0 0 96px;border-radius:12px;overflow:hidden}
+  .fc h4{margin:0 0 4px;font-size:16px}
+  .fc p{margin:0;font-size:13.5px;color:#46524c}
+  .fc .where{color:var(--jade);font-size:12.5px;margin-top:6px;font-weight:600}
+
+  /* alt spots */
+  .alt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .ac{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+  .ac h4{margin:0 0 4px;color:var(--jade);font-size:16px}
+  .ac p{margin:0;font-size:14px;color:#46524c}
+
+  .note{background:#fff8ec;border:1px solid #f0dcb6;border-radius:14px;padding:14px 18px;margin:18px 0;font-size:14.5px;color:#7a5a1e}
+  .note b{color:#9a6a1e}
+
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 20px;text-align:center;color:var(--muted);font-size:13px}
+  footer a{color:var(--muted);text-decoration:underline}
+
+  @media(max-width:560px){
+    header.hero{height:70vh}
+    .fc .fimg{width:78px;height:78px;flex-basis:78px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">杭州 · 出片三日</span>
+    <a href="#intro">行前</a>
+    <a href="#night">当晚</a>
+    <a href="#day1">第1天</a>
+    <a href="#day2">第2天</a>
+    <a href="#shots">出片机位</a>
+    <a href="#food">美食</a>
+    <a href="#alt">备选</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="img/hero_westlake.png" alt="西湖全景" />
+  <div class="scrim"></div>
+  <div class="h-inner">
+    <h1>西湖 × 青山湖 · 雨天出片三日游</h1>
+    <p class="sub">1 晚 + 2 整天 · 每天 11:00 从容出发 · 主打划船与出片 · 山色空蒙雨亦奇</p>
+    <div class="chips">
+      <span class="chip">🏨 起点：拱墅区体育场路18号（武林广场旁）</span>
+      <span class="chip">🌧 雨天友好</span>
+      <span class="chip">🚣 皮划艇/游船</span>
+      <span class="chip">📷 出片导向</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== INTRO ===== -->
+  <section id="intro">
+    <div class="sec-head"><span class="idx">00</span><h2>行前须知</h2></div>
+    <p class="sec-sub">以「体育场路18号」酒店为每天的出发与返回点。市区优先地铁 + 打车，青山湖按地铁/打车往返。</p>
+    <div class="info-grid">
+      <div class="info"><h4>🌧 天气与心态</h4><p>这几天有雨。西湖、灵隐雨中烟雾最出片；青山湖以户外为主，雨大时走室内/茶室备选。出发前一晚再看天气微调。</p></div>
+      <div class="info"><h4>🎒 装备</h4><p>轻便雨衣 + 折叠伞、防滑鞋、备用袜子；出片穿亮色纯色衣服（红 / 白 / 姜黄最跳色），手机/相机带防水袋。</p></div>
+      <div class="info"><h4>🚇 市区交通</h4><p>酒店步行即到武林广场站（地铁 1/2/3 号线）。去西湖、灵隐打车 15–25 分钟即达，雨天首选打车。</p></div>
+      <div class="info"><h4>⏱ 节奏</h4><p>每天 11:00 出发，不赶早；景点排得松，留足拍照与吃饭时间，雨天慢慢逛更舒服。</p></div>
+    </div>
+  </section>
+
+  <!-- ===== NIGHT ===== -->
+  <section id="night">
+    <div class="sec-head"><span class="idx">D0</span><h2>抵达当晚 · 武林广场周边热身</h2></div>
+    <p class="sec-sub">就近吃喝逛，大多有屋檐 / 商场可躲雨，不安排远途。</p>
+    <div class="day">
+      <div class="tl">
+        <div class="stop">
+          <span class="t">傍晚</span>
+          <h3>西湖文化广场 + 武林夜市</h3>
+          <p>酒店步行可达。先去西湖文化广场看运河夜景、杭州大剧院，再逛武林路的武林夜市，小吃 + 小商品，雨天也热闹。</p>
+          <div class="meta"><span class="pill">步行 5–10 分钟</span><span class="pill eat">小吃</span></div>
+          <a class="btn" href="https://www.amap.com/search?query=西湖文化广场" target="_blank" rel="noopener">高德导航</a>
+        </div>
+        <div class="stop">
+          <span class="t">晚上</span>
+          <h3>湖滨步行街 · 西湖东岸夜色</h3>
+          <p>地铁 1 号线武林广场站 → 龙翔桥站（2 站）出站即西湖。湖滨步行街 + in77 商圈，雨夜看湖灯影很美；雨停可碰运气看西湖音乐喷泉（约 19:00、20:00，雨天可能停）。</p>
+          <div class="meta"><span class="pill">地铁 2 站</span><span class="pill eat">晚餐：知味观 / 外婆家 / 新白鹿</span></div>
+          <a class="btn" href="https://www.amap.com/search?query=杭州湖滨步行街" target="_blank" rel="noopener">高德导航</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DAY 1 ===== -->
+  <section id="day1">
+    <div class="sec-head"><span class="idx">D1</span><h2>第 1 天 · 灵隐寺 + 西湖北线 + 傍晚手划船</h2></div>
+    <p class="sec-sub">景点集中在西湖西 / 北一带，雨中烟雾意境最佳，是全程最出片的一天。</p>
+    <span class="day-tag">DAY 1 <small>11:00 出发 · 体育场路18号</small></span>
+
+    <div class="tl">
+      <div class="stop">
+        <span class="t">11:00</span>
+        <h3>飞来峰 · 灵隐寺</h3>
+        <p>酒店打车约 25 分钟。<b>先买飞来峰景区门票进景区</b>，想进灵隐寺要在里面<b>再单独买「香花券」</b>（两张分开）。雨天古木参天、香烟缭绕，飞来峰石窟造像非常有氛围。游览约 2–2.5 小时。</p>
+        <div class="figure"><img src="img/lingyin.jpg" alt="灵隐寺" /></div>
+        <div class="meta"><span class="pill">打车 ¥30 左右</span><span class="pill rain">雨天出片佳</span></div>
+        <a class="btn" href="https://www.amap.com/search?query=灵隐寺" target="_blank" rel="noopener">高德导航·灵隐寺</a>
+        <a class="btn alt" href="https://www.amap.com/search?query=飞来峰" target="_blank" rel="noopener">飞来峰</a>
+      </div>
+
+      <div class="stop">
+        <span class="t">13:30</span>
+        <h3>午餐 · 灵隐路一带</h3>
+        <p>景区周边素斋或杭帮菜，简单吃。也可稍后回市区吃正餐。</p>
+        <div class="meta"><span class="pill eat">素斋 / 农家菜</span></div>
+      </div>
+
+      <div class="stop">
+        <span class="t">14:30</span>
+        <h3>西湖北线漫步 · 断桥 → 白堤 → 孤山</h3>
+        <p>打车到北山街·断桥，开始步行：<b>断桥残雪 → 白堤 → 平湖秋月 → 孤山（西泠印社）→ 曲院风荷</b>。白堤一线雨雾里看湖最经典，沿途多树荫廊道，适合慢拍。</p>
+        <div class="figure"><img src="img/broken_bridge.jpg" alt="断桥" /></div>
+        <div class="meta"><span class="pill">步行约 2 小时</span><span class="pill rain">水墨氛围</span></div>
+        <a class="btn" href="https://www.amap.com/search?query=断桥残雪" target="_blank" rel="noopener">高德导航·断桥</a>
+      </div>
+
+      <div class="stop">
+        <span class="t">16:30</span>
+        <h3>西湖手划船 · 傍晚出片</h3>
+        <p>平湖秋月 / 楼外楼码头可坐<b>手划船</b>（船夫摇橹，约 ¥150/小时/船），配雷峰塔、苏堤背景拍人像最经典；不想自己晃船也可坐三潭印月大游船登小瀛洲。<b>注意：西湖不允许自划皮划艇</b>，皮划艇留到青山湖。</p>
+        <div class="figure"><img src="img/su_causeway.jpg" alt="苏堤" /></div>
+        <div class="meta"><span class="pill">手划船 ¥150/时</span><span class="pill">游船 ¥55–70</span><span class="pill rain">船有顶棚·雨天可坐</span></div>
+        <a class="btn" href="https://www.amap.com/search?query=西湖平湖秋月码头" target="_blank" rel="noopener">高德导航·码头</a>
+      </div>
+
+      <div class="stop">
+        <span class="t">18:30</span>
+        <h3>晚餐 · 楼外楼（孤山店）</h3>
+        <p>百年老字号，西湖醋鱼、东坡肉、龙井虾仁招牌。建议提前预约 / 错峰；不想等也可回湖滨吃。</p>
+        <div class="meta"><span class="pill eat">杭帮名菜</span></div>
+        <a class="btn" href="https://www.amap.com/search?query=楼外楼孤山路店" target="_blank" rel="noopener">高德导航·楼外楼</a>
+      </div>
+    </div>
+
+    <div class="note">☔ <b>雨太大的室内备选：</b>浙江省博物馆（孤山馆）、中国丝绸博物馆，都在西湖边、全程室内，照样充实。</div>
+  </section>
+
+  <!-- ===== DAY 2 ===== -->
+  <section id="day2">
+    <div class="sec-head"><span class="idx">D2</span><h2>第 2 天 · 青山湖水上森林（划船出片主打）</h2></div>
+    <p class="sec-sub">临安区青山湖街道，杭州西郊约 50km。成片池杉长在水里，划皮划艇 / 桨板穿行林间，是杭州划船出片的天花板。</p>
+    <span class="day-tag">DAY 2 <small>11:00 出发 · 体育场路18号</small></span>
+
+    <div class="tl">
+      <div class="stop">
+        <span class="t">交通</span>
+        <h3>怎么去（二选一）</h3>
+        <p><b>① 打车 / 网约车（最省心）：</b>酒店直接打到「青山湖水上森林」景区门口，约 1–1.5 小时，¥120–160。<br>
+        <b>② 地铁（最省钱）：</b>武林广场站 → 换 5 号线到「绿汀路」→ 换 16 号线（杭临线）到「青山湖站」，约 1.5–2 小时；出站后<b>再打车 10–15 分钟</b>到景区（地铁站离景区有距离，这段必须打车）。</p>
+        <div class="meta"><span class="pill">打车 ¥120–160</span><span class="pill">地铁 + 接驳打车</span></div>
+        <a class="btn" href="https://www.amap.com/search?query=青山湖水上森林" target="_blank" rel="noopener">高德导航·水上森林</a>
+        <a class="btn alt" href="https://www.amap.com/search?query=地铁青山湖站" target="_blank" rel="noopener">青山湖地铁站</a>
+      </div>
+
+      <div class="stop">
+        <span class="t">到场</span>
+        <h3>先确认开放 → 选皮划艇 / 桨板 / 游船</h3>
+        <p>到售票 / 租船处<b>先问当天是否开放划船</b>（雨太大或打雷会停划），再决定项目。涨水期池杉泡在水里，水面倒影 + 雾气，随手成片。</p>
+        <div class="figure"><img src="img/water_forest.jpg" alt="水上森林意境（示意）" /></div>
+        <div class="meta"><span class="pill">皮划艇 / 桨板 / 游船</span><span class="pill rain">阴雨出仙气雾感</span></div>
+      </div>
+
+      <div class="stop">
+        <span class="t">出片</span>
+        <h3>机位顺序 & 穿搭</h3>
+        <p>① 林间水道穿行（主图）→ ② 树影倒影处定点拍 → ③ 岸边栈道全景。穿<b>亮色纯色</b>衣服（红 / 白 / 姜黄），与绿水池杉对比最跳色。</p>
+        <div class="figure"><img src="img/sup.jpg" alt="桨板划行（示意）" /></div>
+        <div class="meta"><span class="pill">📷 主图：水道穿行</span></div>
+      </div>
+
+      <div class="stop">
+        <span class="t">午后</span>
+        <h3>午餐 + 青山湖绿道</h3>
+        <p>景区 / 临安城区农家菜（天目笋干、临安山核桃、土鸡）。划完有余力可在青山湖绿道租车骑行一段，环湖绿道也很出名。</p>
+        <div class="figure"><img src="img/qingshan.jpg" alt="青山湖国家森林公园" /></div>
+        <div class="meta"><span class="pill eat">临安农家菜</span><span class="pill">绿道骑行</span></div>
+      </div>
+
+      <div class="stop">
+        <span class="t">傍晚</span>
+        <h3>返回市区 · 运河边晚餐</h3>
+        <p>原路返回体育场路酒店。晚餐推荐<b>胜利河美食街</b>或<b>大兜路历史街区</b>（运河边，氛围好、可躲雨，离酒店都不远）。</p>
+        <div class="meta"><span class="pill eat">胜利河 / 大兜路</span></div>
+        <a class="btn" href="https://www.amap.com/search?query=大兜路历史街区" target="_blank" rel="noopener">高德导航·大兜路</a>
+      </div>
+    </div>
+
+    <div class="note">☔ <b>雨太大的替换方案：</b>水上森林可能停划，可临时改成「九溪烟树 / 龙井村」茶山雨雾游，或西溪湿地摇橹船，都很出片（见下方备选）。</div>
+  </section>
+
+  <!-- ===== SHOTS ===== -->
+  <section id="shots">
+    <div class="sec-head"><span class="idx">📷</span><h2>出片机位精选</h2></div>
+    <p class="sec-sub">按出片效果排序，雨天 / 雾天往往更有氛围。</p>
+    <div class="cards">
+      <div class="pc">
+        <div class="ph"><img src="img/water_forest.jpg" alt="水上森林" /></div>
+        <div class="bd"><div class="tagline">划船天花板</div><h4>青山湖水上森林</h4>
+        <div class="stars">★★★★★</div>
+        <p>划皮划艇 / 桨板穿行池杉林，水面倒影 + 雾气，大片随手出。穿亮色衣服最跳色。<br><small>（图为水杉水林意境示意）</small></p></div>
+      </div>
+      <div class="pc">
+        <div class="ph"><img src="img/broken_bridge.jpg" alt="断桥白堤" /></div>
+        <div class="bd"><div class="tagline">经典水墨</div><h4>断桥 · 白堤</h4>
+        <div class="stars">★★★★★</div>
+        <p>雨雾里的白堤一线，远山如黛、湖面空蒙，最有江南水墨味，人少时段更出片。</p></div>
+      </div>
+      <div class="pc">
+        <div class="ph"><img src="img/su_causeway.jpg" alt="苏堤手划船" /></div>
+        <div class="bd"><div class="tagline">人像首选</div><h4>西湖手划船 · 苏堤背景</h4>
+        <div class="stars">★★★★★</div>
+        <p>摇橹小船配苏堤 / 雷峰塔，坐船回望拍人像非常出片，傍晚光线柔和。</p></div>
+      </div>
+      <div class="pc">
+        <div class="ph"><img src="img/feilaifeng.jpg" alt="飞来峰" /></div>
+        <div class="bd"><div class="tagline">禅意烟雾</div><h4>灵隐 · 飞来峰石窟</h4>
+        <div class="stars">★★★★☆</div>
+        <p>古木 + 香烟 + 山岩造像，雨天雾气下禅意十足，竖构图拍人或拍景都好。</p></div>
+      </div>
+      <div class="pc">
+        <div class="ph"><img src="img/santan.jpg" alt="三潭印月" /></div>
+        <div class="bd"><div class="tagline">湖心岛</div><h4>三潭印月 · 九曲桥</h4>
+        <div class="stars">★★★★☆</div>
+        <p>坐游船登小瀛洲，九曲桥、亭台与三座石塔，构图层次丰富。</p></div>
+      </div>
+      <div class="pc">
+        <div class="ph"><img src="img/leifeng.jpg" alt="雷峰塔" /></div>
+        <div class="bd"><div class="tagline">登塔俯瞰</div><h4>雷峰塔</h4>
+        <div class="stars">★★★★☆</div>
+        <p>有电梯可登塔，俯瞰全湖与苏堤；傍晚「雷峰夕照」最美，雨天室内也能拍。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOD ===== -->
+  <section id="food">
+    <div class="sec-head"><span class="idx">🍤</span><h2>好评美食推荐</h2></div>
+    <p class="sec-sub">杭帮经典 + 高人气老字号，按行程顺路安排。</p>
+    <div class="food">
+      <div class="fc">
+        <div class="fimg"><img src="img/food_fish.jpg" alt="西湖醋鱼" /></div>
+        <div><h4>西湖醋鱼 <span class="stars">★★★★☆</span></h4><p>杭帮头牌，酸甜清鲜，草鱼现做。</p><div class="where">推荐：楼外楼 / 知味观</div></div>
+      </div>
+      <div class="fc">
+        <div class="fimg"><img src="img/food_dongpo.jpg" alt="东坡肉" /></div>
+        <div><h4>东坡肉 <span class="stars">★★★★★</span></h4><p>红亮酥糯、肥而不腻，必点经典。</p><div class="where">推荐：楼外楼 / 外婆家</div></div>
+      </div>
+      <div class="fc">
+        <div class="fimg"><img src="img/food_fish.jpg" alt="龙井虾仁" /></div>
+        <div><h4>龙井虾仁 <span class="stars">★★★★☆</span></h4><p>虾仁配龙井茶，清雅鲜嫩，杭州名菜。</p><div class="where">推荐：楼外楼 / 新白鹿</div></div>
+      </div>
+      <div class="fc">
+        <div class="fimg"><img src="img/hefang.jpg" alt="知味观点心" /></div>
+        <div><h4>知味观点心 <span class="stars">★★★★☆</span></h4><p>猫耳朵、小笼、片儿川，平价好吃接地气。</p><div class="where">推荐：湖滨 / 延安路店</div></div>
+      </div>
+      <div class="fc">
+        <div class="fimg"><img src="img/longjing.jpg" alt="临安山货" /></div>
+        <div><h4>临安山货 <span class="stars">★★★★☆</span></h4><p>天目笋干、山核桃、土鸡煲，青山湖一带农家菜。</p><div class="where">推荐：临安城区 / 景区农家</div></div>
+      </div>
+      <div class="fc">
+        <div class="fimg"><img src="img/jiuxi.jpg" alt="运河夜市" /></div>
+        <div><h4>运河夜宵 <span class="stars">★★★★☆</span></h4><p>胜利河美食街、大兜路，小吃与本帮菜云集，可躲雨。</p><div class="where">推荐：胜利河 / 大兜路（离酒店近）</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ALT ===== -->
+  <section id="alt">
+    <div class="sec-head"><span class="idx">＋</span><h2>备选 & 加分景点</h2></div>
+    <p class="sec-sub">雨太大或想替换青山湖时的好选择，也都很出片。</p>
+    <div class="alt-grid">
+      <div class="ac"><h4>九溪烟树 / 龙井村</h4><p>雨天茶园云雾缭绕，超出片，可整段替换青山湖，离市区约 30 分钟。</p></div>
+      <div class="ac"><h4>杨公堤 / 茅家埠 / 浴鹄湾</h4><p>西湖西侧最幽静一段，人少景好，适合慢拍。</p></div>
+      <div class="ac"><h4>河坊街 + 南宋御街</h4><p>古街小吃，有屋檐可躲雨；可顺游胡雪岩故居。</p></div>
+      <div class="ac"><h4>西溪湿地</h4><p>摇橹船穿行芦苇水道，绿意 + 倒影出片，半天可玩。</p></div>
+      <div class="ac"><h4>中国茶叶博物馆（龙井）</h4><p>雨天茶山云雾很美，室内外结合，文艺出片。</p></div>
+      <div class="ac"><h4>小河直街 / 桥西历史街区</h4><p>运河边老街，市井氛围佳，离酒店较近。</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>祝玩得开心 · 出片满满 🌧📷</p>
+  <p>路线以「拱墅区体育场路18号」为起点规划；实际开放时间、票价、划船项目请以景区当日公告为准。</p>
+  <p>实景配图来自 <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a>（CC 授权），其中水上森林 / 桨板等为意境示意图。</p>
+</footer>
+
+</body>
+</html>
